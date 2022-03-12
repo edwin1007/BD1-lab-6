@@ -24,3 +24,28 @@ create table Builder(
     License varchar(20) not null
 );
 
+create table Neighborhood(
+    NID serial primary key,
+    N_Name varchar(20) not null,
+    City varchar(20) not null
+);
+
+create table HireInfo(
+    BID int,
+    SID int,
+    HireDate date,
+    foreign key (BID) references Builder(BID),
+    foreign key (SID) references SubContractor(SID)
+);
+
+create table House(
+    HID serial primary key,
+    H_Name varchar(20) not null,
+    FinishDate date not null,
+    Price money not null,
+    BID int,
+    NID int,
+    foreign key (BID) references Builder(BID),
+    foreign key (NID) references Neighborhood(NID)
+);
+
