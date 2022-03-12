@@ -1,11 +1,9 @@
 /*
-
 SubContractor (SID, S_Lname, S_Fname, Salary)
 Builder (BID, B_Lname, B_Fname, License) 
 Neighborhood  (NID, N_Name, City)
 HireInfo (BID*, SID*, HireDate) 
 House (HID, H_Name, FinishDate, Price, BID*, NID*) 
-
 */
 
 create database company;
