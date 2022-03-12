@@ -51,3 +51,26 @@ values (2, 3, '01-01-2015'),
         (7, 3, '25-10-2018'),
         (4, 10, '20-05-2021'),
         (3, 5, '12-08-2018');
+
+insert into House(H_Name, FinishDate, Price, BID, NID)
+values ('Casa moderna', '01-01-2017', 50000000, 2, 1),
+        ('Casa Clasica', '09-04-2021', 60000000, 8, 2),
+        ('Casa electrica', '10-11-2013', 80000000, 5, 3),
+        ('Casa familiar', '20-08-2011', 90000000, 7, 4),
+        ('Casa tecnologica', '30-05-2021', 70000000, 2, 5),
+        ('Casa contemporanea', '15-07-2022', 150000000, 1, 6),
+        ('Casa hotel', '10-09-2005', 230000000, 6, 7),
+        ('Casa presidencial', '05-12-2021', 85000000, 7, 8),
+        ('Casa artistica', '10-02-2022', 300000000, 4, 9),
+        ('Casa de seguridad', '25-03-2020', 180000000, 3, 10);
+
+--consultas 
+select * from SubContractor;
+
+select * from Builder;
+
+select * from Neighborhood;
+
+select * from HireInfo;
+
+select * from House;
