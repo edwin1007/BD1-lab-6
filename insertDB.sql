@@ -66,11 +66,26 @@ values ('Casa moderna', '01-01-2017', 50000000, 2, 1),
 
 --consultas 
 select * from SubContractor;
-
 select * from Builder;
-
 select * from Neighborhood;
-
 select * from HireInfo;
-
 select * from House;
+
+--Ejercicio No.1 Presente nombre completo de todos los subcontratistas 
+--(SubContractor) que tengan un salario mayor a 3000000. Asegúrese de que se obtengan 5 registros.
+
+select (S_Lname ||' '|| S_Fname) as full_name, Salary 
+from SubContractor sb where sb.Salary::numeric > 30000000;
+
+--Ejercicio No.2 Presente el nombre de los constructores (Builder) y 
+--subcontratistas (SubContractor) que hayan sido contratados en el 2019
+
+select (B_Lname ||' '|| B_Fname) as name_Builder, (S_Lname||' '||S_Fname) as name_SubContractor
+from HireInfo join Builder(
+    select * from HireInfo join SubContractor where HireDate = '2019';  
+    );
+
+--Ejercicio No.3 Presente de todos los constructores (Builder) que tiene casas en construcción, 
+--el resultado en una sola columna llamada Full_Name especifica el nombre de estos constructores 
+--que deben estar ordenados por apellido. Asegúrese de que se obtengan 8 registros.
+
