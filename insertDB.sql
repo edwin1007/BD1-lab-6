@@ -53,16 +53,16 @@ values (2, 3, '01-01-2015'),
         (3, 5, '12-08-2018');
 
 insert into House(H_Name, FinishDate, Price, BID, NID)
-values ('Casa moderna', '01-01-2017', 50000000, 2, 1),
-        ('Casa Clasica', '09-04-2021', 60000000, 8, 2),
-        ('Casa electrica', '10-11-2013', 80000000, 5, 3),
-        ('Casa familiar', '20-08-2011', 90000000, 7, 4),
-        ('Casa tecnologica', '30-05-2021', 70000000, 2, 5),
-        ('Casa contemporanea', '15-07-2022', 150000000, 1, 6),
-        ('Casa hotel', '10-09-2005', 230000000, 6, 7),
-        ('Casa presidencial', '05-12-2021', 85000000, 7, 8),
-        ('Casa artistica', '10-02-2022', 300000000, 4, 9),
-        ('Casa de seguridad', '25-03-2020', 180000000, 3, 10);
+values ('Casa moderna', '01-01-2023', 50000000, 2, 1),
+        ('Casa Clasica', '09-04-2024', 60000000, 8, 2),
+        ('Casa electrica', '10-11-2022', 80000000, 5, 3),
+        ('Casa familiar', '20-08-2022', 90000000, 7, 4),
+        ('Casa tecnologica', '30-05-2024', 70000000, 2, 5),
+        ('Casa contemporanea', '15-07-2025', 150000000, 1, 6),
+        ('Casa hotel', '10-09-2025', 230000000, 6, 7),
+        ('Casa presidencial', '05-12-2022', 85000000, 7, 8),
+        ('Casa artistica', '10-02-2023', 300000000, 4, 9),
+        ('Casa de seguridad', '25-03-2024', 180000000, 3, 10);
 
 --consultas 
 select * from SubContractor;
@@ -90,3 +90,21 @@ from Builder bl join (
 --el resultado en una sola columna llamada Full_Name especifica el nombre de estos constructores 
 --que deben estar ordenados por apellido. Asegúrese de que se obtengan 8 registros.
 
+select (B_Lname ||' '|| B_Fname) as Full_Name 
+from Builder bl join House hs 
+on bl.BID = hs.BID where FinishDate > now();
+
+--modificacion de fechas de finalizacion para que sean mayores de la fecha actual.
+
+update House set FinishDate = '01-01-2021' where NID = 1;
+update House set FinishDate = '09-04-2024' where NID = 2;
+update House set FinishDate = '10-11-2022' where NID = 3;
+update House set FinishDate = '20-08-2022' where NID = 4;
+update House set FinishDate = '30-05-2024' where NID = 5;
+update House set FinishDate = '15-07-2025' where NID = 6;
+update House set FinishDate = '10-09-2025' where NID = 7;
+update House set FinishDate = '05-12-2022' where NID = 8;
+update House set FinishDate = '10-02-2023' where NID = 9;
+update House set FinishDate = '25-03-2020' where NID = 10;
+
+--ex 4...
