@@ -32,6 +32,7 @@ create table HireInfo(
     BID int,
     SID int,
     HireDate date,
+    PRIMARY KEY (BID, SID),
     foreign key (BID) references Builder(BID),
     foreign key (SID) references SubContractor(SID)
 );
